@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+    <style>
+        table {
+            border: 1px solid black;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        input[type="button"], input[type="submit"] {
+            width: 100%;
+            padding: 20px 40px;
+            background-color: green;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="text"] {
+            width: calc(100% - 0.5%); /* Adjusted to make space for the equal button */
+            padding: 20px 30px;
+            font-size: 24px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            border: 2px solid black;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body style="background-color:black">
+    <form method="POST" action="/">
+        <table id="calcu" style="background-color:white">
+            <tr>
+                <td colspan="3">
+                    <input type="text" name="expression" id="result" value="{{ result }}">
+                </td>
+                <td><input type="submit" value="="></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="1" onclick="document.getElementById('result').value += '1'"></td>
+                <td><input type="button" value="2" onclick="document.getElementById('result').value += '2'"></td>
+                <td><input type="button" value="3" onclick="document.getElementById('result').value += '3'"></td>
+                <td><input type="button" value="/" onclick="document.getElementById('result').value += '/'"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="4" onclick="document.getElementById('result').value += '4'"></td>
+                <td><input type="button" value="5" onclick="document.getElementById('result').value += '5'"></td>
+                <td><input type="button" value="6" onclick="document.getElementById('result').value += '6'"></td>
+                <td><input type="button" value="*" onclick="document.getElementById('result').value += '*'"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="7" onclick="document.getElementById('result').value += '7'"></td>
+                <td><input type="button" value="8" onclick="document.getElementById('result').value += '8'"></td>
+                <td><input type="button" value="9" onclick="document.getElementById('result').value += '9'"></td>
+                <td><input type="button" value="-" onclick="document.getElementById('result').value += '-'"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="0" onclick="document.getElementById('result').value += '0'"></td>
+                <td><input type="button" value="." onclick="document.getElementById('result').value += '.'"></td>
+                <td><input type="button" value="c" onclick="document.getElementById('result').value = ''"></td>
+                <td><input type="button" value="+" onclick="document.getElementById('result').value += '+'"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
